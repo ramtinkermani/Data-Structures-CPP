@@ -73,4 +73,34 @@ void printListRev(Node* head){                      // Prints list from tail to 
         cout << tempArray[i] << endl;
 }
 
+void removeNthItem(Node** head, int n){             // Remove the Nth element from the list, 0-indexed
+    Node* itr = *head;
+    if(itr == NULL)
+        return;
+    if(n > listLen(*head)-1){
+        cout << "Error: Item out of range; Abort Deletion!" <<endl;
+        return;
+    }
+    if(n == 0){
+        Node* temp = itr->next;
+        free(itr);
+        *head = temp;
+        return;
+    }
+    else{
+        for(int i=0; i<n-1; i++)
+            itr = itr->next;
+        Node* temp = itr->next;
+        itr->next = (itr->next)->next;
+        free(temp);
+    }
+}
+
+
 #endif // LINKEDLIST_H_INCLUDED
+
+
+
+
+
+
