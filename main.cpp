@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include "linkedList.h"
-
+// Added from another folder! :)
 using namespace std;
 
 int main()
