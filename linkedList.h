@@ -1,3 +1,8 @@
+/*
+TODO LIST:
+- Make sure you free dynamically allocated memories in all functions and the main
+*/
+
 #ifndef LINKEDLIST_H_INCLUDED
 #define LINKEDLIST_H_INCLUDED
 
@@ -11,7 +16,7 @@ struct node{
     Node* next;
 };
 
-void addToList(Node** head, int item){               // Add an item to the head of the list
+void addToList(Node** head, int item){              // Add an item to the head of the list
     Node* tempNode = (Node*) malloc(sizeof(Node));
     tempNode->value = item;
     tempNode->next = *head;
@@ -51,6 +56,21 @@ int listLen(Node* head){                            // Length of the list
         len++;
     }
     return len;
+}
+
+void printListRev(Node* head){                      // Prints list from tail to head (Revers)
+    int listLength = listLen(head);
+    Node* itr = head;   // List iterator
+    int* tempArray = (int*)malloc(sizeof(int)*listLength);
+    int i = 0;          // Array iterator
+    //for(i=0; i<listLength; i++){  // "For loop" works as well!
+    while(itr != NULL){
+        tempArray[i] = itr->value;
+        itr = itr->next;
+        i++;             // remove this if using FOR LOOP
+    }
+    for(i=listLength-1; i>=0; i--)
+        cout << tempArray[i] << endl;
 }
 
 #endif // LINKEDLIST_H_INCLUDED

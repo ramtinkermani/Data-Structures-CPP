@@ -17,6 +17,8 @@ int main()
     addToList(&myList, 10);
     cout << "List Len: " << listLen(myList) << endl;
     printList(myList);
+    cout << "Printing list from tail to head! Reverse" << endl;
+    printListRev(myList);
 
 
     return 0;
