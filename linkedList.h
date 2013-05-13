@@ -1,6 +1,7 @@
 /*
 TODO LIST:
 - Make sure you free dynamically allocated memories in all functions and the main
+- Use function templates to extend the functions to other type than INT
 */
 
 #ifndef LINKEDLIST_H_INCLUDED
@@ -96,7 +97,7 @@ void removeNthItem(Node** head, int n){             // Remove the Nth element fr
     }
 }
 
-void removeValueFirst(Node** head, int i){
+void removeValueFirst(Node** head, int i){          //Removes the first occurrence of value i in the list
     Node* itr = *head;
     if(itr->value == i){
         *head = itr->next;
@@ -113,12 +114,24 @@ void removeValueFirst(Node** head, int i){
     free(temp);
 }
 
-void removeValueAll(){
+void removeValueAll(Node** head, int i){            // Removes all the occurrences of value i in the list
 
 }
 
-void reverseList(){
+void reverseList(Node** head){                      // Reverses the list from head to tail and vice versa
+    Node *itr1, *itr2, *temp;
+    itr1 = *head;
+    itr2 = itr1->next;
 
+    while(itr2 != NULL){
+        if(itr1 == *head)
+            itr1->next = NULL;
+        temp = itr2->next;
+        itr2->next = itr1;
+        itr1 = itr2;
+        itr2 = temp;
+    }
+    *head = itr1;
 }
 
 #endif // LINKEDLIST_H_INCLUDED

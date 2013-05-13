@@ -17,18 +17,22 @@ int main()
     addToList(&myList, 10);
     cout << "List Len: " << listLen(myList) << endl;
     printList(myList);
-    cout << "Removing first item!" << endl;
+    //cout << "Removing first item!" << endl;
     //printListRev(myList);
-    removeNthItem(&myList, 0);
+    //removeNthItem(&myList, 0);
     //removeNthItem(&myList, 3);
-    printList(myList);
+    //printList(myList);
 
-    cout << "Removing Value 11" << endl;
-    removeValueFirst(&myList, 11);
-    printList(myList);
+    //cout << "Removing Value 11" << endl;
+    //removeValueFirst(&myList, 11);
+    //printList(myList);
 
-    cout << "Removing Value 17" << endl;
-    removeValueFirst(&myList, 17);
+    //cout << "Removing Value 17" << endl;
+    //removeValueFirst(&myList, 17);
+    //printList(myList);
+
+    cout << "reversing the list ...: " << endl;
+    reverseList(&myList);
     printList(myList);
 
     return 0;
