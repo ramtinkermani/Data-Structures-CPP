@@ -23,6 +23,13 @@ int main()
     //removeNthItem(&myList, 3);
     printList(myList);
 
+    cout << "Removing Value 11" << endl;
+    removeValueFirst(&myList, 11);
+    printList(myList);
+
+    cout << "Removing Value 17" << endl;
+    removeValueFirst(&myList, 17);
+    printList(myList);
 
     return 0;
 }

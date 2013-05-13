@@ -96,6 +96,30 @@ void removeNthItem(Node** head, int n){             // Remove the Nth element fr
     }
 }
 
+void removeValueFirst(Node** head, int i){
+    Node* itr = *head;
+    if(itr->value == i){
+        *head = itr->next;
+        free(itr);
+        return;
+    }
+    while(itr->next->value != i){
+        itr = itr->next;
+        if(itr->next == NULL)
+            return;
+    }
+    Node* temp = itr->next;
+    itr->next = temp->next;
+    free(temp);
+}
+
+void removeValueAll(){
+
+}
+
+void reverseList(){
+
+}
 
 #endif // LINKEDLIST_H_INCLUDED
 
