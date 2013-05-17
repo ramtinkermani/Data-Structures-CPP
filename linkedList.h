@@ -16,13 +16,13 @@ void addToListEnd(Node** head, int item);           // Add an item to the tail o
 
 void printList(Node* head);                         // Prints list from head to tail
 
-int listLen(Node* head);                            // Length of the list
+void printListRev(Node* head);                      // Prints list from tail to head (Reverse)
 
-void printListRev(Node* head);                      // Prints list from tail to head (Revers)
+int listLen(Node* head);                            // Length of the list
 
 void removeNthItem(Node** head, int n);             // Remove the Nth element from the list, 0-indexed
 
-void removeValueFirst(Node** head, int i);          //Removes the first occurrence of value i in the list
+void removeValueFirst(Node** head, int i);          // Removes the first occurrence of value i in the list
 
 void removeValueAll(Node** head, int i);            // Removes all the occurrences of value i in the list
 

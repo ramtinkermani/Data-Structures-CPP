@@ -106,7 +106,23 @@ void removeValueFirst(Node** head, int i){          //Removes the first occurren
 }
 
 void removeValueAll(Node** head, int i){            // Removes all the occurrences of value i in the list
+    Node* itr = *head;
+    Node* tmp = NULL;
+    while(itr->value == i){
+        *head = itr->next;
+        free(itr);
+        itr = *head;
+    }
 
+    while(itr->next != NULL){
+        if(itr->next->value == i){
+            tmp = itr->next;
+            itr->next = itr->next->next;
+            free(tmp);
+        }
+        else
+            itr = itr->next;
+    }
 }
 
 void reverseList(Node** head){                      // Reverses the list from head to tail and vice versa
