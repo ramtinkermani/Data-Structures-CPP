@@ -1,8 +1,3 @@
-/*
-TODO LIST:
-- Make sure you free dynamically allocated memories in all functions and the main
-- Use function templates to extend the functions to other type than INT
-*/
 
 #include "linkedList.h"
 
@@ -88,7 +83,7 @@ void removeNthItem(Node** head, int n){             // Remove the Nth element fr
     }
 }
 
-void removeValueFirst(Node** head, int i){          //Removes the first occurrence of value i in the list
+void removeValueFirst(Node** head, int i){          // Removes the first occurrence of value i in the list
     Node* itr = *head;
     if(itr->value == i){
         *head = itr->next;
@@ -140,6 +135,23 @@ void reverseList(Node** head){                      // Reverses the list from he
     }
     *head = itr1;
 }
+
+int returnItem(Node* head, int n){                  // Returns the Nth item of the list, starting from head=0
+    Node* itr = head;
+    int counter = 0;
+    while(counter != n){
+        counter++;
+        itr = itr->next;
+        if(itr == NULL)
+            return -1;                               // ____________ THIS IS WRONG!! You SHould Throw an Exception here!
+    }
+    return itr->value;
+}
+
+
+
+
+
 
 
 
